@@ -105,7 +105,7 @@ def Readfiche_livre(post_id):
 
 @app.route('/consultation2/')
 def ReadBDD2():
-    conn = sqlite3.connect('database.db2')
+    conn = sqlite3.connect('database2.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM books;')
     data = cursor.fetchall()
@@ -122,7 +122,7 @@ def enregistrer_livre():
     prenom = request.form['prenom']
 
     # Connexion à la base de données
-    conn = sqlite3.connect('database.db2')
+    conn = sqlite3.connect('database2.db')
     cursor = conn.cursor()
 
     # Exécution de la requête SQL pour insérer un nouveau client
