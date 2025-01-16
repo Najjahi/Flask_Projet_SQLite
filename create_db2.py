@@ -9,7 +9,7 @@ cur = connection.cursor()  #preparer l injection de lignes
 
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Les Miserables', 'Victor Hugo', 'Roman Historique'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Fiction'))
-cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Le Seigneur des Anneaux', 'J.R.R. Tolkien', '789, Fantasy'))
+cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Le Seigneur des Anneaux', 'J.R.R. Tolkien', 'Fantasy'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Da Vinci Code', 'Dan Brown', 'Thriller'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('La Peste', 'Albert Camus', 'Roman'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Les Fleurs du mal', 'Charles Baudelaire', 'Poesie'))
