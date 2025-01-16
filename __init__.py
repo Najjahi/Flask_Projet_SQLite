@@ -91,7 +91,7 @@ def fiche_client(nom):
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
 
-#bdd2 bibliotheque
+#####################  bdd2 bibliotheque  #################################################################
 
 @app.route('/fiche_livre/<int:post_id>')
 def Readfiche_livre(post_id):
@@ -130,6 +130,20 @@ def enregistrer_livre():
     conn.commit()
     conn.close()
     return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
+
+@app.route('/fiche_livre/<string:nom>')
+def fiche_livre_n(nom):
+    if not est_authentifie():
+        # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
+        return redirect(url_for('authentification'))
+    conn = sqlite3.connect('database2.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM books WHERE title = ?', (titre,))
+    data = cursor.fetchall()
+    conn.close()
+    # Rendre le template HTML et transmettre les données
+    return render_template('read_data2.html', data=data)
+
 
                                                                                                                                        
 if __name__ == "__main__":
