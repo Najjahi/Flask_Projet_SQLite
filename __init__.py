@@ -83,7 +83,7 @@ def enregistrer_client():
 
 
 @app.route('/fiche_client/<string:nom>')
- if request.method == 'POST':
+ if request.method == 'GET':
         # Vérifier les identifiants
         if request.form['username'] == 'admin' and request.form['password'] == 'password': # password à cacher par la suite
             session['authentifie'] = True
