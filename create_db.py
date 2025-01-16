@@ -3,9 +3,9 @@ import sqlite3
 connection = sqlite3.connect('database.db')
 
 with open('schema.sql') as f:
-    connection.executescript(f.read())
+    connection.executescript(f.read())  #vous executer le shema
 
-cur = connection.cursor()
+cur = connection.cursor()  #preparer l injection de lignes
 
 cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('DUPONT', 'Emilie', '123, Rue des Lilas, 75001 Paris'))
 cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LEROUX', 'Lucas', '456, Avenue du Soleil, 31000 Toulouse'))
