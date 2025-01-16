@@ -126,9 +126,11 @@ def enregistrer_livre():
     # Connexion à la base de données
     conn = sqlite3.connect('database2.db')
     cursor = conn.cursor()
-
+    # Obtenir la date du jour et formater
+    aujourd_hui = date.today()
+    date_formatee = aujourd_hui.strftime('%d/%m/%Y')
     # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (1002938, Titre, Autheur, Genre))
+    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (aujourd_hui, Titre, Autheur, Genre))
     conn.commit()
     conn.close()
     return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
