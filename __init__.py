@@ -112,7 +112,7 @@ def ReadBDD2():
     conn.close()
     return render_template('read_data2.html', data=data)
 
-@app.route('/books', methods=['GET'])
+@app.route('/enregistrer_livre', methods=['GET'])
 def formulaire_livre():
     return render_template('formulaire2.html')  # afficher le formulaire
 
