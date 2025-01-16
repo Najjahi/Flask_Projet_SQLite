@@ -1,14 +1,15 @@
 -- Table des livres
+DROP TABLE IF EXISTS books;
 CREATE TABLE books (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     title TEXT NOT NULL,          -- Titre du livre
     author TEXT NOT NULL,         -- Auteur du livre
-    genre TEXT,                -- Genre du livre (optionnel)
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- Date d'enregistrement
+    genre TEXT               -- Genre du livre (optionnel)
     --published_date DATE,          -- Date de publication
     --isbn TEXT UNIQUE,             -- ISBN (identifiant unique pour les livres)
     --created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- Date d'enregistrement
-);
+  );
 
 -- Table des utilisateurs
 CREATE TABLE users (
