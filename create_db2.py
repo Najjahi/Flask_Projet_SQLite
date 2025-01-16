@@ -7,14 +7,15 @@ with open('schema2.sql') as f:
 
 cur = connection.cursor()  #preparer l injection de lignes
 
-Le Petit Prince	Antoine de Saint-Exupéry	Fiction
-3	Les Misérables	Victor Hugo	Roman Historique
-4	L'Étranger	Albert Camus	Philosophie
-5	Harry Potter à l'école des sorciers	J.K. Rowling	Fantastique
-6	Le Seigneur des Anneaux	J.R.R. Tolkien	Fantasy
-7	Da Vinci Code	Dan Brown	Thriller
-8	L'Art de la Guerre	Sun Tzu	Stratégie
-9	La Peste	Albert Camus	Roman
-10	Les Fleurs du mal	Charles Baudelaire	Poésie
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('Les Miserables', 'Victor Hugo', 'Roman Historique'))
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Fiction'))
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('Le Seigneur des Anneaux', 'J.R.R. Tolkien', '789, Fantasy'))
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('Da Vinci Code', 'Dan Brown', 'Thriller'))
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('La Peste', 'Albert Camus', 'Roman'))
+cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('Les Fleurs du mal', 'Charles Baudelaire', 'Poesie'))
+#cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('DUBOIS', 'Charlotte', '789, Rue des Roses, 13005 Marseille'))
+#cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LEFEVRE', 'Thomas', '333, Rue de la Paix, 75002 Paris'))
+
+
 connection.commit()
 connection.close()
