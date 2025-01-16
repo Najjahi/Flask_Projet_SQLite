@@ -101,7 +101,7 @@ def Readfiche_livre(post_id):
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
-    return render_template('read_data2.html', data2=data)
+    return render_template('read_data.html', data=data)
 
 @app.route('/consultation2/')
 def ReadBDD2():
@@ -142,7 +142,7 @@ def fiche_livre_n(nom):
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
-    return render_template('read_data2.html', data2=data)
+    return render_template('read_data.html', data=data)
 
 
                                                                                                                                        
