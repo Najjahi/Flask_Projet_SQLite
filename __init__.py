@@ -128,7 +128,7 @@ def enregistrer_livre():
     cursor = conn.cursor()
     # Obtenir la date du jour et formater
     aujourd_hui = date.today()
-    date_formatee = aujourd_hui.strftime('%d/%m/%Y')
+
     # Exécution de la requête SQL pour insérer un nouveau client
     cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (aujourd_hui, Titre, Autheur, Genre))
     conn.commit()
