@@ -127,7 +127,7 @@ def enregistrer_livre():
     cursor = conn.cursor()
 
     # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (1002938, titre, auteur, "ICI"))
+    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (1002938, titre, auteur, type, "ICI"))
     conn.commit()
     conn.close()
     return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
