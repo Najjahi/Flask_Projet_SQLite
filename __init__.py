@@ -83,10 +83,6 @@ def enregistrer_client():
         # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
         return redirect(url_for('authentification'))
 
-  # Si l'utilisateur est authentifié
-    return "<h2>Bravo, vous êtes authentifié</h2>"
-
-
    #return render_template('formulaire_authentification.html', error=False)
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
