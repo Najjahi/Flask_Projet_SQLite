@@ -4,9 +4,9 @@ CREATE TABLE books (
     title TEXT NOT NULL,          -- Titre du livre
     author TEXT NOT NULL,         -- Auteur du livre
     genre TEXT,                   -- Genre du livre (optionnel)
-    published_date DATE,          -- Date de publication
-    isbn TEXT UNIQUE,             -- ISBN (identifiant unique pour les livres)
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- Date d'enregistrement
+    --published_date DATE,          -- Date de publication
+    --isbn TEXT UNIQUE,             -- ISBN (identifiant unique pour les livres)
+    --created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- Date d'enregistrement
 );
 
 -- Table des utilisateurs
