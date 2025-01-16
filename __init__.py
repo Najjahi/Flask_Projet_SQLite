@@ -91,7 +91,7 @@ def fiche_client(nom):
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
 
-
+#bdd2 bibliotheque
 
 @app.route('/fiche_livre/<int:post_id>')
 def Readfiche_livre(post_id):
@@ -126,10 +126,10 @@ def enregistrer_livre():
     cursor = conn.cursor()
 
     # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO books (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
+    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (1002938, titre, auteur, "ICI"))
     conn.commit()
     conn.close()
-    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+    return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
 
                                                                                                                                        
 if __name__ == "__main__":
