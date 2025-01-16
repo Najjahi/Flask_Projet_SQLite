@@ -126,9 +126,10 @@ def enregistrer_livre():
     # Connexion à la base de données
     conn = sqlite3.connect('database2.db')
     cursor = conn.cursor()
-    # Obtenir la date du jour et formater
-    aujourd_hui = date.today()
 
+    # Obtenir la date et l'heure actuelles
+    date_et_heure = datetime.now()
+    
     # Exécution de la requête SQL pour insérer un nouveau client
     cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (aujourd_hui, Titre, Autheur, Genre))
     conn.commit()
