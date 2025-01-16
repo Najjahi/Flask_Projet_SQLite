@@ -95,7 +95,7 @@ def fiche_client(nom):
 
 @app.route('/fiche_livre/<int:post_id>')
 def Readfiche_livre(post_id):
-    conn = sqlite3.connect('database.db2')
+    conn = sqlite3.connect('database2.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM books WHERE id = ?', (post_id,))
     data = cursor.fetchall()
