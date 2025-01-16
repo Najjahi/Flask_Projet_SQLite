@@ -118,8 +118,9 @@ def formulaire_livre():
 
 @app.route('/enregistrer_livre', methods=['POST'])
 def enregistrer_livre():
-    nom = request.form['title']
-    prenom = request.form['author']
+    Titre du livre = request.form['title']
+    Autheur du livre = request.form['author']
+    Type du livre = request.form['genre']
 
     # Connexion à la base de données
     conn = sqlite3.connect('database2.db')
