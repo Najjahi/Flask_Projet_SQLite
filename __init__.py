@@ -77,6 +77,24 @@ def enregistrer_client():
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 
+USERNAME = 'user'
+PASSWORD = '12345'
+
+# Page de connexion
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Vérification des identifiants
+        if username == USERNAME and password == PASSWORD:
+            session['logged_in'] = True
+            return redirect(url_for('home'))
+        else:
+            return "Nom d'utilisateur ou mot de passe incorrect.", 403
+
+    return redirect('/fiche_client/')
 @app.route('/fiche_client/<string:nom>')
 def fiche_client(nom):    
     conn = sqlite3.connect('database.db')
