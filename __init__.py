@@ -101,7 +101,7 @@ def Readfiche_livre(post_id):
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
-    return render_template('read_data.html', data=data)
+    return render_template('read_data2.html', data2=data)
 
 @app.route('/consultation2/')
 def ReadBDD2():
@@ -110,7 +110,7 @@ def ReadBDD2():
     cursor.execute('SELECT * FROM books;')
     data = cursor.fetchall()
     conn.close()
-    return render_template('read_data.html', data=data)
+    return render_template('read_data2.html', data2=data)
 
 @app.route('/enregistrer_livre', methods=['GET'])
 def formulaire_livre():
@@ -118,8 +118,8 @@ def formulaire_livre():
 
 @app.route('/enregistrer_livre', methods=['POST'])
 def enregistrer_livre():
-    nom = request.form['nom']
-    prenom = request.form['prenom']
+    nom = request.form['title']
+    prenom = request.form['author']
 
     # Connexion à la base de données
     conn = sqlite3.connect('database2.db')
@@ -142,7 +142,7 @@ def fiche_livre_n(nom):
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
-    return render_template('read_data2.html', data=data)
+    return render_template('read_data2.html', data2=data)
 
 
                                                                                                                                        
