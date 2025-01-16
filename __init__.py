@@ -128,10 +128,11 @@ def enregistrer_livre():
     cursor = conn.cursor()
 
     # Obtenir la date et l'heure actuelles
-    date_et_heure = datetime.now()
-    
+    #date_et_heure = datetime.now()
+    # Obtenir la date du jour et formater
+    aujourd_hui = date.today()
     # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (date_et_heure, Titre, Autheur, Genre))
+    cursor.execute('INSERT INTO books (created, title, author, genre) VALUES (?, ?, ?, ?)', (aujourd_hui, Titre, Autheur, Genre))
     conn.commit()
     conn.close()
     return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
