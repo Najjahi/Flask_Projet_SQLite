@@ -138,7 +138,7 @@ def enregistrer_livre():
     return redirect('/consultation2/')  # Rediriger vers la page d'accueil après l'enregistrement
 
 @app.route('/fiche_livre/<string:nom>')
-def fiche_livre_n(nom):
+def fiche_livre_n(title):
     if not est_authentifie():
         # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
         return redirect(url_for('authentification'))
