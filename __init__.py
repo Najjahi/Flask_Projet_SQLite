@@ -76,8 +76,8 @@ def enregistrer_client():
     cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
     conn.commit()
     conn.close()
-    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
-
+    #return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+    return render_template('formulaire.html')  # afficher le formulaire
 
 @app.route('/fiche_client/<string:nom>')
 def fiche_client(nom):
