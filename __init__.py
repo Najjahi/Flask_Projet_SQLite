@@ -47,7 +47,7 @@ def Readfiche(post_id):
     cursor.execute('SELECT * FROM clients WHERE id = ?', (post_id,))
     data = cursor.fetchall()
     conn.close()
-    # Rendre le template HTML et transmettre les données
+    #Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
 
 @app.route('/consultation/')
@@ -76,9 +76,8 @@ def enregistrer_client():
     cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (1002938, nom, prenom, "ICI"))
     conn.commit()
     conn.close()
-    #return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
-    return render_template('formulaire.html')  # afficher le formulaire
-
+    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+    
 @app.route('/fiche_client/<string:nom>')
 def fiche_client(nom):
     conn = sqlite3.connect('database.db')
