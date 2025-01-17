@@ -81,9 +81,6 @@ def enregistrer_client():
 
 @app.route('/fiche_client/<string:nom>')
 def fiche_client(nom):
-    if not est_authentifie():
-        # Rediriger vers la page d'authentification si l'utilisateur n'est pas authentifié
-        return redirect(url_for('authentification'))
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom,))
