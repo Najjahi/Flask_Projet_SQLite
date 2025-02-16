@@ -1,18 +1,20 @@
 -- Table des livres
-DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS recettes; 
 CREATE TABLE books (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    title TEXT NOT NULL,          -- Titre du livre
-    author TEXT NOT NULL,         -- Auteur du livre
-    genre TEXT               -- Genre du livre (optionnel)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,    
+    title TEXT NOT NULL,          -- Titre du recette
+    date_posted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    author TEXT NOT NULL,         -- Auteur du recette
+    categorie TEXT               -- Genre du recette (optionnel)
+    thumbnail TEXT,               -- URL de l'image de couverture
+    slug TEXT UNIQUE,             -- Slug (identifiant unique pour les recettes)
     --published_date DATE,          -- Date de publication
-    --isbn TEXT UNIQUE,             -- ISBN (identifiant unique pour les livres)
+    --isbn TEXT UNIQUE,             -- ISBN (identifiant unique pour les recettes)
     --created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- Date d'enregistrement
   );
 
 -- Table des utilisateurs
-CREATE TABLE users (
+CREATE TABLE users ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT NOT NULL UNIQUE, -- Nom d'utilisateur
     email TEXT UNIQUE,             -- Adresse email

@@ -7,7 +7,7 @@ with open('schema2.sql') as f:
 
 cur = connection.cursor()  #preparer l injection de lignes
 
-cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Les Miserables', 'Victor Hugo', 'Roman Historique'))
+cur.execute("INSERT INTO recettes (title, date_posted, type, thumbnail, slug) VALUES (?, ?, ?)",('Les Miserables', 'Victor Hugo', 'Roman Historique'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Fiction'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Le Seigneur des Anneaux', 'J.R.R. Tolkien', 'Fantasy'))
 cur.execute("INSERT INTO books (title, author, genre) VALUES (?, ?, ?)",('Da Vinci Code', 'Dan Brown', 'Thriller'))

@@ -7,14 +7,14 @@ with open('schema.sql') as f:
 
 cur = connection.cursor()  #preparer l injection de lignes
 
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('DUPONT', 'Emilie', '123, Rue des Lilas, 75001 Paris'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LEROUX', 'Lucas', '456, Avenue du Soleil, 31000 Toulouse'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('MARTIN', 'Amandine', '789, Rue des Érables, 69002 Lyon'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('TREMBLAY', 'Antoine', '1010, Boulevard de la Mer, 13008 Marseille'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LAMBERT', 'Sarah', '222, Avenue de la Liberté, 59000 Lille'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('GAGNON', 'Nicolas', '456, Boulevard des Cerisiers, 69003 Lyon'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('DUBOIS', 'Charlotte', '789, Rue des Roses, 13005 Marseille'))
-cur.execute("INSERT INTO clients (nom, prenom, adresse) VALUES (?, ?, ?)",('LEFEVRE', 'Thomas', '333, Rue de la Paix, 75002 Paris'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Imane', 'NAJJAHI', 'imane', 'imane@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Izdi', 'NAJJAHI', 'izdi', 'izdi@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Anas', 'NAJJAHI', 'anas', 'anas@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Zineb', 'ZAHIDI', 'zineb', 'zineb@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Aicha', 'ZAHIDI', 'aicha', 'aicha@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Joudia', 'ZAHIDI', 'joudia', 'joudia@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Bahija', 'ZAHIDI', 'bahija', 'bahija@gmail.com', 'Cn@m2025'))
+cur.execute("INSERT INTO users (fname, lname, username, email, password ) VALUES (?, ?, ?)",('Amina', 'ZAHIDI', 'amina', 'amina@gmail.com', 'Cn@m2025'))
 
 connection.commit()
 connection.close()
